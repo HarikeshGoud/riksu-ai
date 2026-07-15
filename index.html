@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>riksu.ai — We build AI systems that work while you sleep</title>
+<meta name="description" content="AI automation agency in Hyderabad, working worldwide. Chatbots, voice agents, dashboards, workflow automation. Book a free 15-minute AI audit — full site launching soon.">
+<meta property="og:title" content="riksu.ai — AI systems that work while you sleep">
+<meta property="og:description" content="AI chatbots · voice agents · smart dashboards · workflow automation. Book a free 15-minute AI audit.">
+<meta property="og:type" content="website">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0e1c">
+<meta name="theme-color" content="#eceaf6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ede8f5'/%3E%3Ctext x='28' y='46' font-family='Georgia,serif' font-size='42' fill='%23212950' text-anchor='middle'%3Er%3C/text%3E%3Ccircle cx='47' cy='42' r='6' fill='%233d52a0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* BLUE theme, light + dark — Foundations palette (3D52A0 · 7091E6 · 8697C4 · ADBBDA · EDE8F5).
+     Follows the device's prefers-color-scheme; the toggle button sets data-theme on <html>
+     (persisted in localStorage, overrides the system). ?theme=dark|light forces one for screenshots.
+     Other variants: poster-orange.html (dark orange), poster-blue-dark.html (dark blue, static).
+     Accent var names kept as --orange for painless revert. */
+  :root{
+    /* LIGHT (default) */
+    --bg:#eceaf6;
+    --cream:#212950;
+    --body:#3f4a78;
+    --muted:#7080b2;
+    --orange:#3d52a0;
+    --orange-bright:#5d78d6;
+    --orange-deep:#2c3d7d;
+    --line:rgba(61,82,160,.35);
+    --hair:rgba(33,41,80,.1);
+    --glow1:rgba(112,145,230,.5);
+    --glow2:rgba(112,145,230,.16);
+    --smoke-a:rgba(112,145,230,.22);
+    --smoke-b:rgba(134,151,196,.28);
+    --smoke-c:rgba(61,82,160,.16);
+    --stroke:rgba(33,41,80,.5);
+    --stroke-w:1.5px;
+    --aur1:rgba(112,145,230,.5);
+    --aur2:rgba(147,132,235,.42);
+    --aur3:rgba(61,82,160,.36);
+    --aur-op:.85;
+    --cursor-c:rgba(61,82,160,.13);
+    --dot-a:rgba(93,120,214,.7);
+    --dot-b:rgba(93,120,214,.3);
+    --stamp-bg:rgba(61,82,160,.06);
+    --btn-text:#f4f3fb;
+    --btn-sh:rgba(61,82,160,.35);
+    --btn-sh2:rgba(61,82,160,.5);
+    --grain-op:.3;
+    --sel-bg:rgba(112,145,230,.4);
+    --serif:'Instrument Serif',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',monospace;
+  }
+  /* DARK — via system preference (unless manually set to light)… */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b0e1c;--cream:#ede8f5;--body:#adbbda;--muted:#8697c4;
+      --orange:#7091e6;--orange-bright:#8ba5f2;--orange-deep:#3d52a0;
+      --line:rgba(112,145,230,.32);--hair:rgba(237,232,245,.09);
+      --glow1:rgba(86,116,215,.55);--glow2:rgba(86,116,215,.16);
+      --smoke-a:rgba(72,92,160,.3);--smoke-b:rgba(54,72,134,.36);--smoke-c:rgba(40,54,104,.4);
+      --stroke:rgba(134,159,235,.15);--stroke-w:1px;
+      --aur1:rgba(86,116,215,.32);--aur2:rgba(118,102,222,.24);--aur3:rgba(61,82,160,.3);--aur-op:.75;
+      --cursor-c:rgba(112,145,230,.15);
+      --dot-a:rgba(139,165,242,.8);--dot-b:rgba(139,165,242,.35);
+      --stamp-bg:rgba(112,145,230,.07);
+      --btn-text:#0a0f24;--btn-sh:rgba(93,124,214,.4);--btn-sh2:rgba(93,124,214,.6);
+      --grain-op:.5;--sel-bg:rgba(112,145,230,.35);
+    }
+  }
+  /* …or via the toggle button */
+  :root[data-theme="dark"]{
+    --bg:#0b0e1c;--cream:#ede8f5;--body:#adbbda;--muted:#8697c4;
+    --orange:#7091e6;--orange-bright:#8ba5f2;--orange-deep:#3d52a0;
+    --line:rgba(112,145,230,.32);--hair:rgba(237,232,245,.09);
+    --glow1:rgba(86,116,215,.55);--glow2:rgba(86,116,215,.16);
+    --smoke-a:rgba(72,92,160,.3);--smoke-b:rgba(54,72,134,.36);--smoke-c:rgba(40,54,104,.4);
+    --stroke:rgba(134,159,235,.15);--stroke-w:1px;
+    --aur1:rgba(86,116,215,.32);--aur2:rgba(118,102,222,.24);--aur3:rgba(61,82,160,.3);--aur-op:.75;
+    --cursor-c:rgba(112,145,230,.15);
+    --dot-a:rgba(139,165,242,.8);--dot-b:rgba(139,165,242,.35);
+    --stamp-bg:rgba(112,145,230,.07);
+    --btn-text:#0a0f24;--btn-sh:rgba(93,124,214,.4);--btn-sh2:rgba(93,124,214,.6);
+    --grain-op:.5;--sel-bg:rgba(112,145,230,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--sans);
+    overflow:hidden;
+    height:100svh;
+    display:flex;flex-direction:column;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--sel-bg);color:var(--cream)}
+  a{color:inherit;text-decoration:none}
+
+  /* ================= background fx ================= */
+  .fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .glow{
+    position:absolute;right:-18%;bottom:-38%;width:85%;height:110%;border-radius:50%;
+    background:radial-gradient(closest-side,var(--glow1),var(--glow2) 48%,transparent 72%);
+    filter:blur(12px);
+    animation:breathe 11s ease-in-out infinite;
+    transform-origin:70% 70%;
+  }
+  @keyframes breathe{
+    0%,100%{transform:scale(1);opacity:.9}
+    50%{transform:scale(1.12);opacity:1}
+  }
+  /* ambient lighting — soft aurora blobs that wander, rotate and breathe */
+  .aur{position:absolute;border-radius:50%;filter:blur(80px);opacity:var(--aur-op);will-change:transform}
+  .aur.x{width:58vw;height:52vh;left:-8%;top:-14%;background:radial-gradient(closest-side,var(--aur1),transparent 70%);animation:aurX 21s ease-in-out infinite alternate}
+  .aur.y{width:50vw;height:56vh;right:-12%;top:16%;background:radial-gradient(closest-side,var(--aur2),transparent 70%);animation:aurY 27s ease-in-out infinite alternate}
+  .aur.z{width:46vw;height:44vh;left:16%;bottom:-16%;background:radial-gradient(closest-side,var(--aur3),transparent 70%);animation:aurZ 24s ease-in-out infinite alternate}
+  @keyframes aurX{
+    0%{transform:translate(0,0) rotate(-8deg) scale(1);opacity:calc(var(--aur-op)*.75)}
+    50%{opacity:var(--aur-op)}
+    100%{transform:translate(7vw,6vh) rotate(10deg) scale(1.18);opacity:calc(var(--aur-op)*.85)}
+  }
+  @keyframes aurY{
+    0%{transform:translate(0,0) rotate(6deg) scale(1.1);opacity:var(--aur-op)}
+    50%{opacity:calc(var(--aur-op)*.65)}
+    100%{transform:translate(-8vw,-5vh) rotate(-9deg) scale(.95);opacity:calc(var(--aur-op)*.9)}
+  }
+  @keyframes aurZ{
+    0%{transform:translate(0,0) rotate(0deg) scale(1);opacity:calc(var(--aur-op)*.7)}
+    50%{opacity:var(--aur-op)}
+    100%{transform:translate(6vw,-6vh) rotate(12deg) scale(1.22);opacity:calc(var(--aur-op)*.8)}
+  }
+  .smoke{position:absolute;border-radius:50%;filter:blur(75px)}
+  .smoke.a{width:46vw;height:40vh;left:24%;top:-6%;background:var(--smoke-a);animation:drift1 34s ease-in-out infinite alternate}
+  .smoke.b{width:38vw;height:42vh;left:50%;top:34%;background:var(--smoke-b);animation:drift2 41s ease-in-out infinite alternate}
+  .smoke.c{width:34vw;height:36vh;left:2%;top:44%;background:var(--smoke-c);animation:drift3 29s ease-in-out infinite alternate}
+  @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(-6vw,5vh)}}
+  @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(5vw,-4vh)}}
+  @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(4vw,4vh)}}
+  .bg-word{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
+    font-family:var(--serif);font-size:clamp(8rem,26vw,24rem);line-height:1;white-space:nowrap;
+    color:transparent;-webkit-text-stroke:var(--stroke-w) var(--stroke);
+    user-select:none;
+    animation:sway 26s ease-in-out infinite alternate;
+  }
+  @supports not (-webkit-text-stroke:1px black){.bg-word{color:var(--stroke)}}
+  @keyframes sway{from{transform:translate(-53%,-52%)}to{transform:translate(-47%,-52%)}}
+  .grain{
+    position:fixed;inset:0;z-index:60;pointer-events:none;opacity:var(--grain-op);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .cursor-glow{
+    position:fixed;left:0;top:0;width:520px;height:520px;z-index:1;pointer-events:none;
+    margin:-260px 0 0 -260px;border-radius:50%;
+    background:radial-gradient(closest-side,var(--cursor-c),transparent 70%);
+    opacity:0;transition:opacity .6s;
+  }
+  .dot{
+    position:fixed;top:16vh;right:11vw;width:9px;height:9px;border-radius:50%;z-index:2;pointer-events:none;
+    background:var(--orange-bright);
+    box-shadow:0 0 6px 2px var(--dot-a),0 0 28px 10px var(--dot-b);
+    animation:pulse 4.5s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.35);opacity:1}}
+
+  /* ================= entrance helpers ================= */
+  .up{opacity:0;transform:translateY(26px);animation:rise .9s cubic-bezier(.2,.65,.25,1) both;animation-delay:var(--d,0s)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  h1 .w{display:inline-block;opacity:0;transform:translateY(.55em) rotate(1.5deg);
+    animation:wordUp .85s cubic-bezier(.2,.65,.25,1) both;animation-delay:calc(.25s + var(--i)*.085s)}
+  @keyframes wordUp{to{opacity:1;transform:none}}
+
+  /* ================= layout ================= */
+  .bar{
+    position:relative;z-index:5;flex:none;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:clamp(16px,2.6vh,28px) clamp(20px,4vw,56px);
+  }
+  .logo{font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.7rem);color:var(--cream)}
+  .logo em{font-style:normal;color:var(--orange)}
+  .top-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+  .pill{
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);
+    border:1px solid var(--line);border-radius:999px;padding:7px 15px;white-space:nowrap;
+  }
+  .pill .blink{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange-bright);
+    margin-right:8px;vertical-align:1px;animation:pulse 2.2s ease-in-out infinite}
+  .stamp{
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);
+    border:1px solid var(--line);border-radius:999px;padding:7px 15px;transform:rotate(-4deg);
+    background:var(--stamp-bg);white-space:nowrap;
+  }
+  .mode{
+    width:38px;height:38px;border-radius:50%;flex:none;
+    border:1px solid var(--line);background:transparent;color:var(--orange);
+    font-family:var(--serif);font-size:1.05rem;line-height:1;cursor:pointer;
+    display:grid;place-items:center;padding:0;
+    transition:background .3s,transform .3s;
+  }
+  .mode:hover{background:var(--stamp-bg);transform:rotate(-14deg)}
+  .mode:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+  /* one-shot cross-fade when the toggle flips the theme */
+  html.theming *{transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .5s ease,opacity .5s ease!important}
+
+  main{
+    position:relative;z-index:5;flex:1;min-height:0;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:0 clamp(20px,4vw,56px);
+    max-width:1500px;width:100%;margin:0 auto;
+  }
+  .label{
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);
+    margin-bottom:clamp(18px,3.2vh,34px);
+  }
+  .label::before{content:"";width:34px;height:1px;background:var(--orange)}
+  h1{
+    font-family:var(--serif);font-weight:400;color:var(--cream);
+    font-size:clamp(2.6rem,7.2vmin,6.8rem);line-height:1.04;letter-spacing:.002em;
+    max-width:11.5em;margin-bottom:clamp(18px,3.4vh,36px);
+  }
+  .sleep{font-style:italic;color:var(--orange);position:relative;display:inline-block}
+  .sleep svg{position:absolute;left:0;bottom:-.1em;width:100%;height:.22em;overflow:visible}
+  .sleep svg path{
+    fill:none;stroke:var(--orange);stroke-width:3.4;stroke-linecap:round;
+    stroke-dasharray:1;stroke-dashoffset:1;animation:draw .8s ease-out forwards 1.15s;
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .sub{
+    color:var(--body);font-size:clamp(.95rem,1.3vw,1.12rem);line-height:1.6;max-width:430px;
+    margin-bottom:clamp(24px,4.6vh,52px);
+  }
+  .ctas{display:flex;align-items:center;gap:clamp(18px,2.6vw,34px);flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-weight:600;font-size:clamp(.92rem,1.1vw,1.02rem);color:var(--btn-text);
+    background:linear-gradient(180deg,var(--orange-bright),var(--orange-deep));
+    padding:16px 30px;border-radius:13px;white-space:nowrap;
+    box-shadow:0 8px 30px var(--btn-sh),inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .28s,box-shadow .28s;
+  }
+  .btn .ar{transition:transform .28s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 44px var(--btn-sh2),inset 0 1px 0 rgba(255,255,255,.25)}
+  .btn:hover .ar{transform:translateX(4px)}
+  .mails{display:flex;flex-direction:column;gap:2px;font-size:clamp(.86rem,1vw,.95rem)}
+  .mails span{font-family:var(--mono);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .mails a{color:var(--orange);width:fit-content;position:relative;transition:color .25s}
+  .mails a::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--orange-bright);transition:width .3s}
+  .mails a:hover{color:var(--orange-bright)}
+  .mails a:hover::after{width:100%}
+
+  /* ================= services ticker ================= */
+  .ticker{
+    position:relative;z-index:5;flex:none;overflow:hidden;white-space:nowrap;
+    padding:clamp(10px,2vh,18px) 0;
+    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    -webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);
+  }
+  .ticker:hover .t-track{animation-play-state:paused}
+  .t-track{display:inline-flex;animation:tick 30s linear infinite}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .t-item{
+    font-family:var(--serif);font-size:clamp(1.2rem,2.4vh,1.6rem);color:var(--cream);
+    display:inline-flex;align-items:center;
+  }
+  .t-item i{font-style:normal;color:var(--orange);margin:0 .8em;font-size:.55em}
+  .t-item em{font-style:italic;color:var(--orange)}
+
+  /* ================= footer ================= */
+  .bot{font-size:.82rem;color:var(--muted);flex-wrap:wrap;row-gap:8px}
+  .bot .mid{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+  .bot .mid b{color:var(--orange-bright);font-weight:500}
+
+  /* ================= responsive / short screens ================= */
+  @media (max-width:640px){
+    .top-right .pill{display:none}
+    .bot span:last-child{display:none}
+    .bot{justify-content:center;text-align:center}
+    .ctas{gap:18px}
+    h1{max-width:100%}
+    .dot{right:8vw;top:13vh}
+  }
+  @media (max-height:620px){
+    .label{margin-bottom:12px}
+    .sub{margin-bottom:18px}
+    h1{font-size:clamp(2.1rem,6.4vmin,5rem);margin-bottom:14px}
+    .btn{padding:12px 22px}
+    .bg-word{font-size:clamp(6rem,22vw,16rem)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,html.theming *{animation-duration:.01s!important;animation-delay:0s!important;transition:none!important}
+    .cursor-glow{display:none}
+  }
+  /* ?static=1 capture mode: land all animations on their end state */
+  html.static *{animation-duration:0s!important;animation-delay:0s!important;transition:none!important}
+  html.static .cursor-glow{display:none}
+</style>
+<script>
+  // theme init — runs before paint so there's no flash of the wrong theme.
+  // priority: ?theme= param (screenshots) > saved toggle choice > device preference (CSS media query).
+  (function(){
+    var r = document.documentElement, q = new URLSearchParams(location.search);
+    if (q.get('static')) r.classList.add('static');
+    var saved = null;
+    try { saved = localStorage.getItem('riksu-theme'); } catch(e){}
+    var p = q.get('theme');
+    var t = (p === 'dark' || p === 'light') ? p : (saved === 'dark' || saved === 'light') ? saved : null;
+    if (t) r.dataset.theme = t;
+  })();
+</script>
+</head>
+<body>
+
+<div class="fx" aria-hidden="true">
+  <div class="glow"></div>
+  <div class="aur x"></div><div class="aur y"></div><div class="aur z"></div>
+  <div class="smoke a"></div><div class="smoke b"></div><div class="smoke c"></div>
+  <div class="bg-word">riksu</div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="dot" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ top bar ============ -->
+<header class="bar up" style="--d:.1s">
+  <a class="logo" href="/">riksu<em>.ai</em></a>
+  <div class="top-right">
+    <span class="stamp">Full site — launching soon</span>
+    <span class="pill"><span class="blink"></span>Always on · 24/7</span>
+    <button class="mode" id="modeBtn" type="button" aria-label="Switch theme"><span class="mi">☾</span></button>
+  </div>
+</header>
+
+<!-- ============ center ============ -->
+<main>
+  <div class="label up" style="--d:.2s">AI Automation Agency<span style="letter-spacing:.28em">·</span>Hyderabad → Worldwide</div>
+  <h1 aria-label="We build AI systems that work while you sleep.">
+    <span class="w" style="--i:0">We</span>
+    <span class="w" style="--i:1">build</span>
+    <span class="w" style="--i:2">AI</span>
+    <span class="w" style="--i:3">systems</span>
+    <span class="w" style="--i:4">that</span>
+    <span class="w" style="--i:5">work</span>
+    <span class="w" style="--i:6">while</span>
+    <span class="w" style="--i:7">you</span>
+    <span class="w" style="--i:8"><span class="sleep">sleep.<svg viewBox="0 0 120 12" aria-hidden="true"><path pathLength="1" d="M3 9 C 32 3, 68 11, 117 5"/></svg></span></span>
+  </h1>
+  <p class="sub up" style="--d:.85s">Automation, chatbots, dashboards, AI agents. Built for businesses that don't have time to waste.</p>
+  <div class="ctas up" style="--d:1s">
+    <a class="btn" href="mailto:harikesh@riksu.co?cc=sushruta@riksu.co&subject=Free%20AI%20Audit%20—%20via%20riksu.ai&body=Hi%20riksu.ai%2C%0A%0AI'd%20like%20to%20book%20a%20free%2015-minute%20AI%20audit.%0A%0AName%3A%20%0ACompany%3A%20%0AWhat's%20eating%20my%20time%3A%20%0A">
+      Book a Free 15-min AI Audit <span class="ar">→</span>
+    </a>
+    <div class="mails">
+      <span>or email us directly</span>
+      <a href="mailto:harikesh@riksu.co">harikesh@riksu.co</a>
+      <a href="mailto:sushruta@riksu.co">sushruta@riksu.co</a>
+    </div>
+  </div>
+</main>
+
+<!-- ============ services ticker ============ -->
+<div class="ticker up" style="--d:1.15s" aria-label="Services: AI chatbots and agents, AI voice agents, smart dashboards, workflow automation, internal tools and CRMs, AI strategy and audits">
+  <div class="t-track" aria-hidden="true">
+    <span class="t-item">AI Chatbots &amp; Agents<i>◆</i>AI Voice Agents<i>◆</i>Smart Dashboards<i>◆</i>Workflow Automation<i>◆</i>Internal Tools &amp; CRMs<i>◆</i>AI Strategy &amp; Audits<i>◆</i><em>free 15-min audit</em><i>◆</i></span>
+    <span class="t-item">AI Chatbots &amp; Agents<i>◆</i>AI Voice Agents<i>◆</i>Smart Dashboards<i>◆</i>Workflow Automation<i>◆</i>Internal Tools &amp; CRMs<i>◆</i>AI Strategy &amp; Audits<i>◆</i><em>free 15-min audit</em><i>◆</i></span>
+  </div>
+</div>
+
+<!-- ============ bottom bar ============ -->
+<footer class="bar bot up" style="--d:1.3s">
+  <span>© 2026 riksu.ai · Built with AI, powered by humans.</span>
+  <span class="mid">HYD <b id="clock">--:--</b> IST</span>
+  <span>Working with clients worldwide</span>
+</footer>
+
+<script>
+  // dark/light toggle — follows the device by default (see init script in <head>)
+  const root = document.documentElement;
+  const mq = matchMedia('(prefers-color-scheme: dark)');
+  const modeBtn = document.getElementById('modeBtn');
+  const effTheme = () => root.dataset.theme || (mq.matches ? 'dark' : 'light');
+  function paintMode() {
+    const t = effTheme();
+    modeBtn.querySelector('.mi').textContent = t === 'dark' ? '☀' : '☾';
+    const label = t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    modeBtn.setAttribute('aria-label', label);
+    modeBtn.title = label;
+    document.querySelectorAll('meta[name="theme-color"]').forEach(m => {
+      m.content = t === 'dark' ? '#0b0e1c' : '#eceaf6';
+    });
+  }
+  modeBtn.addEventListener('click', () => {
+    const next = effTheme() === 'dark' ? 'light' : 'dark';
+    root.classList.add('theming');
+    root.dataset.theme = next;
+    try { localStorage.setItem('riksu-theme', next); } catch(e){}
+    paintMode();
+    setTimeout(() => root.classList.remove('theming'), 550);
+  });
+  mq.addEventListener('change', paintMode);
+  paintMode();
+
+  // live Hyderabad clock
+  const clock = document.getElementById('clock');
+  const tickClock = () => {
+    clock.textContent = new Intl.DateTimeFormat('en-IN', {
+      hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata'
+    }).format(new Date());
+  };
+  tickClock();
+  setInterval(tickClock, 15000);
+
+  // cursor-follow glow (fine pointers only)
+  if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    const g = document.getElementById('cursorGlow');
+    let tx = innerWidth * .7, ty = innerHeight * .4, x = tx, y = ty, shown = false;
+    addEventListener('pointermove', e => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { g.style.opacity = 1; shown = true; }
+    }, {passive: true});
+    (function loop() {
+      x += (tx - x) * .07; y += (ty - y) * .07;
+      g.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+      requestAnimationFrame(loop);
+    })();
+  }
+</script>
+</body>
+</html>
