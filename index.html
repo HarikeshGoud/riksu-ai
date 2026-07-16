@@ -142,14 +142,14 @@
   @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(5vw,-4vh)}}
   @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(4vw,4vh)}}
   .bg-word{
-    position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
-    font-family:var(--serif);font-size:clamp(8rem,26vw,24rem);line-height:1;white-space:nowrap;
+    position:absolute;left:62%;top:50%;transform:translate(-50%,-52%);
+    font-family:var(--serif);font-size:clamp(8rem,27vw,26rem);line-height:1;white-space:nowrap;
     color:transparent;-webkit-text-stroke:var(--stroke-w) var(--stroke);
     user-select:none;
     animation:sway 26s ease-in-out infinite alternate;
   }
   @supports not (-webkit-text-stroke:1px black){.bg-word{color:var(--stroke)}}
-  @keyframes sway{from{transform:translate(-53%,-52%)}to{transform:translate(-47%,-52%)}}
+  @keyframes sway{from{transform:translate(-52%,-52%)}to{transform:translate(-46%,-52%)}}
   .grain{
     position:fixed;inset:0;z-index:60;pointer-events:none;opacity:var(--grain-op);
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -215,14 +215,14 @@
   }
   .label{
     display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-    font-family:var(--mono);font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);
-    margin-bottom:clamp(18px,3.2vh,34px);
+    font-family:var(--mono);font-size:clamp(.64rem,.92vmin,.82rem);letter-spacing:.28em;text-transform:uppercase;color:var(--orange);
+    margin-bottom:clamp(20px,3.6vh,44px);
   }
-  .label::before{content:"";width:34px;height:1px;background:var(--orange)}
+  .label::before{content:"";width:clamp(34px,3vw,60px);height:1px;background:var(--orange)}
   h1{
     font-family:var(--serif);font-weight:400;color:var(--cream);
-    font-size:clamp(2.6rem,7.2vmin,6.8rem);line-height:1.04;letter-spacing:.002em;
-    max-width:11.5em;margin-bottom:clamp(18px,3.4vh,36px);
+    font-size:clamp(2.6rem,8.7vmin,9.4rem);line-height:1.02;letter-spacing:.002em;
+    max-width:12em;margin-bottom:clamp(20px,3.8vh,48px);
   }
   .sleep{font-style:italic;color:var(--orange);position:relative;display:inline-block}
   .sleep svg{position:absolute;left:0;bottom:-.1em;width:100%;height:.22em;overflow:visible}
@@ -232,8 +232,8 @@
   }
   @keyframes draw{to{stroke-dashoffset:0}}
   .sub{
-    color:var(--body);font-size:clamp(.95rem,1.3vw,1.12rem);line-height:1.6;max-width:430px;
-    margin-bottom:clamp(24px,4.6vh,52px);
+    color:var(--body);font-size:clamp(1rem,1.45vw,1.3rem);line-height:1.6;max-width:clamp(430px,34vw,540px);
+    margin-bottom:clamp(26px,5vh,64px);
   }
   .ctas{display:flex;align-items:center;gap:clamp(18px,2.6vw,34px);flex-wrap:wrap}
   .btn{
